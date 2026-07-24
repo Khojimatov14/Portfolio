@@ -5,7 +5,7 @@ services:
     build: .
     container_name: portfolio_web
     expose:
-      - "8000"
+      - "${PORT:-8000}"
     environment:
       - SECRET_KEY=${SECRET_KEY:-django-insecure-production-secret-key-change-me}
       - DEBUG=${DEBUG:-False}
