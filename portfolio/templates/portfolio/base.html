@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Khojimatov Anvarjon — Python Backend Engineer{% endblock %}</title>
+  <meta name="description"
+    content="{% block meta_description %}Khojimatov Anvarjon — Python Backend Engineer & System Integrator. Django, FastAPI, PostgreSQL, Docker, n8n.{% endblock %}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-narrow d-flex align-items-center justify-content-between py-2">
+      <a class="brand" href="/">khojimatov<span>.uz</span></a>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="navMenu">
+        <ul class="navbar-nav gap-1 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#about" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#skills" data-i18n="nav_skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#projects" data-i18n="nav_projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'blog_list' %}" data-i18n="nav_blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-chip d-none d-lg-block"><span class="dot"></span>OPEN TO WORK</span>
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-dropdown-btn" id="langDropdownBtn" onclick="toggleLangMenu(event)">
+            <span id="currentLangLabel">EN</span>
+            <i class="bi bi-chevron-down ms-1" style="font-size:0.6rem;"></i>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-option" data-lang="en" onclick="switchLanguage('en')">EN — English</button>
+            <button class="lang-option" data-lang="uz" onclick="switchLanguage('uz')">UZ — O'zbek</button>
+            <button class="lang-option" data-lang="ru" onclick="switchLanguage('ru')">RU — Русский</button>
+          </div>
+        </div>
+        <!-- Mobile Toggler (after lang-switcher) -->
+        <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navMenu">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container-narrow d-flex flex-wrap justify-content-between align-items-center">
+      <span>© 2026 Khojimatov Anvarjon. All rights reserved.</span>
+      <div>
+        <a href="/">Home</a>
+        <a href="{% url 'blog_list' %}">Blog</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'portfolio/js/script.js' %}"></script>
+</body>
+
+</html>

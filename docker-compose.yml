@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: portfolio_web
+    expose:
+      - "8000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-django-insecure-production-secret-key-change-me}
+      - DEBUG=${DEBUG:-False}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-*}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+    volumes:
+      - sqlite_data:/app
+    restart: always
+
+volumes:
+  sqlite_data:

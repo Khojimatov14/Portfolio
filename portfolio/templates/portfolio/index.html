@@ -1,0 +1,342 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">Khojimatov Anvarjon — Python Backend Engineer</title>
+  <meta name="description"
+    content="Khojimatov Anvarjon — Python Backend Engineer & System Integrator. Django, FastAPI, PostgreSQL, Docker, n8n.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-narrow d-flex align-items-center justify-content-between py-2">
+      <a class="brand" href="#home">khojimatov<span>.uz</span></a>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="navMenu">
+        <ul class="navbar-nav gap-1 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav_projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'blog_list' %}" data-i18n="nav_blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-chip d-none d-lg-block"><span class="dot"></span>OPEN TO WORK</span>
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-dropdown-btn" id="langDropdownBtn" onclick="toggleLangMenu(event)">
+            <span id="currentLangLabel">EN</span>
+            <i class="bi bi-chevron-down ms-1" style="font-size:0.6rem;"></i>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-option" data-lang="en" onclick="switchLanguage('en')">EN — English</button>
+            <button class="lang-option" data-lang="uz" onclick="switchLanguage('uz')">UZ — O'zbek</button>
+            <button class="lang-option" data-lang="ru" onclick="switchLanguage('ru')">RU — Русский</button>
+          </div>
+        </div>
+        <!-- Mobile Toggler (after lang-switcher) -->
+        <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navMenu">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero">
+    <div class="container-narrow w-100">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="eyebrow">SRV-ID: KHOJIMATOV-A / BACKEND</div>
+          <h1 data-i18n="hero_title">Hi, I'm <span class="accent">Anvarjon</span>.<br>I build reliable backend systems.
+          </h1>
+          <div class="hero-role mono">
+            <span id="heroRole"></span><span class="cursor"></span>
+          </div>
+          <p class="hero-lead" data-i18n="hero_desc">I build REST APIs, automated workflows and production-grade backend
+            architecture — using Django, FastAPI, PostgreSQL, Docker and n8n.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#projects" class="btn-accent" data-i18n="hero_btn_projects">View Projects</a>
+            <a href="#contact" class="btn-ghost" data-i18n="hero_btn_contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="status-panel reveal">
+            <div class="status-panel-head">
+              <span class="tab"></span><span class="tab"></span><span class="tab"></span>
+              <span class="title" data-i18n="status_panel">system-status.log</span>
+            </div>
+            <div class="status-row">
+              <span class="name" data-i18n="status_1_name">Public Utility APIs</span>
+              <span class="val"><span class="dot"></span>LIVE</span>
+            </div>
+            <div class="status-row">
+              <span class="name" data-i18n="status_2_name">Video Pipeline</span>
+              <span class="val"><span class="dot"></span>RUNNING</span>
+            </div>
+            <div class="status-row">
+              <span class="name" data-i18n="status_3_name">Giftora Backend</span>
+              <span class="val"><span class="dot"></span>PRODUCTION</span>
+            </div>
+            <div class="status-row">
+              <span class="name"><span data-i18n="status_4_name">Uptime</span> (30d)</span>
+              <span class="val uptime-val">99.8%</span>
+            </div>
+            <div class="status-row">
+              <span class="name" data-i18n="status_5_name">Stack</span>
+              <span class="val">Python / Django / FastAPI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section">
+    <div class="container-narrow">
+      <div class="row g-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label" data-i18n="about_label">// 01 — ABOUT</div>
+          <h2 class="mb-3" data-i18n="about_title">I build backend systems that are reliable and well-structured</h2>
+          <p class="text-secondary" style="color: var(--text-dim)" data-i18n="about_p1">
+            As a Python backend engineer and system integrator, I work on REST API services, database architecture, and
+            automated workflows. I've built production-grade projects with Django and FastAPI, design data with
+            PostgreSQL and MongoDB, deploy with Docker, and automate processes between services using n8n.
+          </p>
+          <p style="color: var(--text-dim)" data-i18n="about_p2">
+            I value clean code, clear architecture, and systems that work reliably in production — not just "it works",
+            but "it works reliably".
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6 reveal">
+              <div class="stat">
+                <div class="num">3+</div>
+                <div class="label" data-i18n="stat_1">Production Projects</div>
+              </div>
+            </div>
+            <div class="col-6 reveal">
+              <div class="stat">
+                <div class="num">10+</div>
+                <div class="label" data-i18n="stat_2">Technologies / Tools</div>
+              </div>
+            </div>
+            <div class="col-6 reveal">
+              <div class="stat">
+                <div class="num">REST</div>
+                <div class="label" data-i18n="stat_3">API Architecture</div>
+              </div>
+            </div>
+            <div class="col-6 reveal">
+              <div class="stat">
+                <div class="num">24/7</div>
+                <div class="label" data-i18n="stat_4">VPS / Deployment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section">
+    <div class="container-narrow">
+      <div class="section-label reveal" data-i18n="skills_label">// 02 — SKILLS</div>
+      <h2 class="mb-5 reveal" data-i18n="skills_title">Technology Stack</h2>
+
+      <div class="row g-4">
+        {% for category in skill_categories %}
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="skill-group">
+            <h4>{{ category.name }}</h4>
+            <div>
+              {% for skill in category.skills.all %}
+              <span class="pill">{{ skill.name }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section">
+    <div class="container-narrow">
+      <div class="section-label reveal" data-i18n="projects_label">// 03 — PROJECTS</div>
+      <h2 class="mb-5 reveal" data-i18n="projects_title">Real Projects</h2>
+
+      <div class="row g-4">
+        {% for project in projects %}
+        <div class="col-lg-4 reveal">
+          {% if project.link %}
+          <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="project-card-link">
+            {% endif %}
+            <div class="project-card">
+              <div class="head">
+                <span class="srv-id">SRV-{{ forloop.counter|stringformat:"02d" }}</span>
+                {% if project.is_live %}
+                <span class="badge-status">ACTIVE</span>
+                {% endif %}
+              </div>
+              <div class="project-card-body">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+              </div>
+              <div class="project-card-footer">
+                <div class="tags">
+                  {% for tag in project.tags_list %}
+                  <span class="pill">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% if project.link %}
+                <span class="project-arrow"><i class="bi bi-arrow-right"></i></span>
+                {% endif %}
+              </div>
+            </div>
+            {% if project.link %}
+          </a>
+          {% endif %}
+        </div>
+        {% empty %}
+        <div class="col-12">
+          <p style="color: var(--text-dim)" data-i18n="projects_empty">No projects yet.</p>
+        </div>
+        {% endfor %}
+      </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section">
+    <div class="container-narrow">
+      <div class="section-label reveal" data-i18n="contact_label">// 04 — CONTACT</div>
+      <h2 class="mb-5 reveal" data-i18n="nav_contact">Contact</h2>
+
+      <div class="row g-5">
+        <div class="col-lg-5 reveal">
+          <p style="color: var(--text-dim)" class="mb-4" data-i18n="contact_desc">
+            If you have a project, collaboration idea or question — use the form below or reach out through the
+            following channels.
+          </p>
+
+          <div class="contact-info-item">
+            <i class="bi bi-envelope"></i>
+            <div>
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:khojimatov14@gmail.com">khojimatov14@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <div class="label">Phone</div>
+              <div class="value"><a href="tel:+998906266644">+998 90 626 66 44</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-telegram"></i>
+            <div>
+              <div class="label">Telegram</div>
+              <div class="value"><a href="https://t.me/khojimatov14" target="_blank"
+                  rel="noopener noreferrer">@khojimatov14</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-github"></i>
+            <div>
+              <div class="label">GitHub</div>
+              <div class="value"><a href="https://github.com/khojimatov14" target="_blank"
+                  rel="noopener noreferrer">github.com/khojimatov14</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-linkedin"></i>
+            <div>
+              <div class="label">LinkedIn</div>
+              <div class="value"><a href="https://www.linkedin.com/in/anvarjon-khojimatov-395b00218/" target="_blank"
+                  rel="noopener noreferrer">linkedin.com/khojimatov14</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div id="formAlertContainer"></div>
+          <form id="contactForm" method="post" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label-custom" data-i18n="contact_name">Your Name</label>
+              <input type="text" class="form-control form-control-custom" name="name"
+                data-i18n-placeholder="contact_name_placeholder" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Email</label>
+              <input type="email" class="form-control form-control-custom" name="email" placeholder="email@example.com"
+                required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom" data-i18n="contact_subject">Subject</label>
+              <input type="text" class="form-control form-control-custom" name="subject"
+                data-i18n-placeholder="contact_subject_placeholder" placeholder="Message subject (optional)">
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom" data-i18n="contact_message">Message</label>
+              <textarea class="form-control form-control-custom" name="message" rows="5"
+                data-i18n-placeholder="contact_message_placeholder" placeholder="Write your message..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn-accent" data-i18n="contact_submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container-narrow d-flex flex-wrap justify-content-between align-items-center">
+      <span>© 2026 <span data-i18n="footer_copyright">Khojimatov Anvarjon. All rights reserved.</span></span>
+      <div>
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'portfolio/js/script.js' %}"></script>
+</body>
+
+</html>

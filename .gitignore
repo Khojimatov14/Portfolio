@@ -1,0 +1,27 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Static files
+portfolio/static/portfolio/locales/*.json

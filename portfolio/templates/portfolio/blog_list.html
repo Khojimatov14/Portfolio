@@ -1,0 +1,53 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Blog — Khojimatov Anvarjon{% endblock %}
+{% block meta_description %}Backend engineering blog by Khojimatov Anvarjon — Django, FastAPI, Docker, system integration.{% endblock %}
+
+{% block extra_css %}{% endblock %}
+
+{% block content %}
+<!-- ===================== PAGE HEADER ===================== -->
+<section class="page-title-section">
+  <div class="container-narrow">
+    <a href="/" class="back-link"><i class="bi bi-arrow-left"></i> Back to Home</a>
+    <div class="eyebrow">// BLOG</div>
+    <h1>Blog</h1>
+    <p style="color: var(--text-dim); max-width: 50ch;">Thoughts on backend engineering, system design, Python, Django, and everything in between.</p>
+  </div>
+</section>
+
+<!-- ===================== BLOG LIST ===================== -->
+<section class="section">
+  <div class="container-narrow">
+    {% if posts %}
+    <div class="row g-4">
+      {% for post in posts %}
+      <div class="col-lg-4 col-md-6">
+        <a href="{% url 'blog_detail' slug=post.slug %}" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+          <div class="blog-card">
+            <div class="blog-meta">
+              <span>{{ post.created_at|date:"M d, Y" }}</span>
+              <span class="dot-sep"></span>
+              <span>{{ post.created_at|date:"H:i" }}</span>
+            </div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+            <div class="blog-footer">
+              <span class="read-more">Read <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="blog-empty">
+      <i class="bi bi-journal-text"></i>
+      <p class="mb-1" style="font-size:1.1rem;">No posts yet</p>
+      <p>Coming soon — articles about backend engineering, Django, FastAPI, and more.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
