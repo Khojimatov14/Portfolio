@@ -29,9 +29,9 @@ def index(request):
                 message=message_text,
             )
             send_telegram_notification(name, email, subject, message_text)
-            return JsonResponse({'success': True, 'message': 'Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog\'lanamiz.'})
+            return JsonResponse({'success': True, 'message': 'Your message has been sent successfully! We will contact you soon.'})
         else:
-            return JsonResponse({'success': False, 'message': 'Iltimos, barcha majburiy maydonlarni to\'ldiring.'})
+            return JsonResponse({'success': False, 'message': 'Please fill in all required fields.'})
 
     context = {
         'skill_categories': skill_categories,
