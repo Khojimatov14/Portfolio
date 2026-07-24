@@ -24,4 +24,4 @@ db.sqlite3
 Thumbs.db
 
 # Static files
-portfolio/static/portfolio/locales/*.json
+# portfolio/static/portfolio/locales/*.json
