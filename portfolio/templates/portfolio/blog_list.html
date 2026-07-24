@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block title %}Blog — Khojimatov Anvarjon{% endblock %}
-{% block meta_description %}Backend engineering blog by Khojimatov Anvarjon — Django, FastAPI, Docker, system integration.{% endblock %}
+{% block meta_description %}Backend engineering blog by Khojimatov Anvarjon — Django, FastAPI, Docker, system
+integration.{% endblock %}
 
 {% block extra_css %}{% endblock %}
 
@@ -13,7 +14,8 @@
     <a href="/" class="back-link"><i class="bi bi-arrow-left"></i> Back to Home</a>
     <div class="eyebrow">// BLOG</div>
     <h1>Blog</h1>
-    <p style="color: var(--text-dim); max-width: 50ch;">Thoughts on backend engineering, system design, Python, Django, and everything in between.</p>
+    <p style="color: var(--text-dim); max-width: 50ch;">Thoughts on backend engineering, system design, Python, Django,
+      and everything in between.</p>
   </div>
 </section>
 
@@ -24,7 +26,8 @@
     <div class="row g-4">
       {% for post in posts %}
       <div class="col-lg-4 col-md-6">
-        <a href="{% url 'blog_detail' slug=post.slug %}" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+        <a href="{% url 'blog_detail' slug=post.slug %}"
+          style="text-decoration: none; color: inherit; display: block; height: 100%;">
           <div class="blog-card">
             <div class="blog-meta">
               <span>{{ post.created_at|date:"M d, Y" }}</span>
