@@ -128,7 +128,7 @@ Open `http://127.0.0.1:8000/` in your browser.
 - **Website:** [khojimatov.uz](https://khojimatov.uz)
 - **GitHub:** [@Khojimatov14](https://github.com/Khojimatov14)
 - **LinkedIn:** [Anvarjon Khojimatov](https://www.linkedin.com/in/anvarjon-khojimatov-395b00218/)
-- **Telegram:** [@khojimatov](https://t.me/khojimatov14)
+- **Telegram:** [@khojimatov14](https://t.me/khojimatov14)
 
 ---
 
