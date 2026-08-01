@@ -14,7 +14,8 @@ class SkillAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_live', 'created_at')
+    list_display = ('title', 'order', 'is_live', 'created_at')
+    list_editable = ('order',)
     list_filter = ('is_live',)
 
 @admin.register(ContactMessage)

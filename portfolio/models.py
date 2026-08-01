@@ -30,10 +30,11 @@ class Project(models.Model):
     github_link = models.URLField(blank=True, null=True)
     tags = models.CharField(max_length=200, help_text="Comma separated tags")
     is_live = models.BooleanField(default=False)
+    order = models.IntegerField(default=0, help_text="Asosiy sahifadagi tartibi (1, 2, 3...)")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['order', '-created_at']
 
     def tags_list(self):
         return [tag.strip() for tag in self.tags.split(',') if tag.strip()]
