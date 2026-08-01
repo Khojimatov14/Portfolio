@@ -2,15 +2,15 @@
 
 # 🚀 Anvarjon Khojimatov — Developer Portfolio & Platform
 
-<a href="https://python.org" target="_blank">![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)</a>
-<a href="https://djangoproject.com" target="_blank">![Django](https://img.shields.io/badge/Django-6.0-092E20?style=for-the-badge&logo=django&logoColor=white)</a>
-<a href="https://docker.com" target="_blank">![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)</a>
-<a href="https://t.me/khojimatov14" target="_blank">![Telegram](https://img.shields.io/badge/Telegram-Notifier-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)</a>
-<a href="https://khojimatov.uz" target="_blank">![Status](https://img.shields.io/badge/Live-khojimatov.uz-success?style=for-the-badge&logo=google-chrome&logoColor=white)</a>
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Django](https://img.shields.io/badge/Django-6.0-092E20?style=for-the-badge&logo=django&logoColor=white)](https://djangoproject.com)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+[![Telegram](https://img.shields.io/badge/Telegram-Notifier-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/khojimatov14)
+[![Status](https://img.shields.io/badge/Live-khojimatov.uz-success?style=for-the-badge&logo=google-chrome&logoColor=white)](https://khojimatov.uz)
 
 An advanced, modern, production-grade personal portfolio and engineering blog platform built with Python, Django, Docker, and cutting-edge UI aesthetics.
 
-<a href="https://khojimatov.uz" target="_blank">🌐 View Live Site</a> • <a href="mailto:khojimatov14@gmail.com" target="_blank">📧 Contact Me</a> • <a href="https://t.me/khojimatov14" target="_blank">💬 Telegram</a>
+[🌐 View Live Site](https://khojimatov.uz) • [📧 Contact Me](mailto:khojimatov14@gmail.com) • [💬 Telegram](https://t.me/khojimatov14)
 
 </div>
 
@@ -18,7 +18,7 @@ An advanced, modern, production-grade personal portfolio and engineering blog pl
 
 ## 🌟 Overview
 
-This repository contains the complete source code for **<a href="https://khojimatov.uz" target="_blank">khojimatov.uz</a>** — a full-featured personal developer portfolio and engineering blog platform. Built with a focus on reliability, architecture, performance, security, and elegant UI/UX design.
+This repository contains the complete source code for **[khojimatov.uz](https://khojimatov.uz)** — a full-featured personal developer portfolio and engineering blog platform. Built with a focus on reliability, architecture, performance, security, and elegant UI/UX design.
 
 ### Key Features
 - **⚡ Custom Project Ordering:** Real-world projects with admin-configurable display order (`order` field) for complete positioning control on the home page.
@@ -125,10 +125,10 @@ Open `http://127.0.0.1:8000/` in your browser.
 
 **Anvarjon Khojimatov** — Python Backend Engineer & System Integrator
 
-- **Website:** <a href="https://khojimatov.uz" target="_blank">khojimatov.uz</a>
-- **GitHub:** <a href="https://github.com/Khojimatov14" target="_blank">@Khojimatov14</a>
-- **LinkedIn:** <a href="https://www.linkedin.com/in/anvarjon-khojimatov-395b00218/" target="_blank">Anvarjon Khojimatov</a>
-- **Telegram:** <a href="https://t.me/khojimatov14" target="_blank">@khojimatov14</a>
+- **Website:** [khojimatov.uz](https://khojimatov.uz)
+- **GitHub:** [@Khojimatov14](https://github.com/Khojimatov14)
+- **LinkedIn:** [Anvarjon Khojimatov](https://www.linkedin.com/in/anvarjon-khojimatov-395b00218/)
+- **Telegram:** [@khojimatov14](https://t.me/khojimatov14)
 
 ---
 
